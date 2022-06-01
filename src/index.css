@@ -1,13 +1,31 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --p-orange: hsl(25, 97%, 53%);
+  --n-white: hsl(0, 0%, 100%);
+  --n-lgrey: hsl(217, 12%, 63%);
+  --n-mgrey: hsl(216, 12%, 54%);
+  --n-mgrey-o: hsla(216, 12%, 54%, 0.15);
+  --n-dblue: hsl(213, 20%, 18%);
+  --n-vdblue: hsl(216, 12%, 8%);
+
+  --ff: 'Overpass', sans-serif;
+  --fs: 15px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-size: var(--fs);
+  color: var(--n-white);
+  background-color: var(--n-vdblue);
 }

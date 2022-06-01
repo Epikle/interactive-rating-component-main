@@ -1,38 +1,132 @@
-.App {
+.form,
+.response {
+  display: grid;
+  gap: 1rem;
+  max-width: 23rem;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--n-dblue);
+  background: linear-gradient(
+    0deg,
+    hsla(213, 20%, 18%, 0.4) 0%,
+    hsla(213, 20%, 18%, 1) 100%
+  );
+}
+
+.response {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form img {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--n-mgrey-o);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.response img {
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.response span {
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 100vw;
+  color: var(--p-orange);
+  background-color: var(--n-mgrey-o);
+}
+
+main h1 {
+  font-size: 1.5rem;
+}
+
+main p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--n-lgrey);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 0.75rem;
+  padding: 0;
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+form ul input[type='radio'] {
+  display: grid;
+  place-content: center;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font: inherit;
+  color: var(--n-white);
+  background-color: var(--n-mgrey-o);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+form ul input[type='radio']:hover {
+  background-color: var(--n-lgrey);
+}
+
+form ul input[type='radio']::before {
+  content: '';
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transform: scale(0);
+  box-shadow: inset 3rem 3rem var(--p-orange);
+  transition: transform 120ms ease-in-out;
+}
+
+form ul input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+form ul input[type='radio']::after {
+  content: attr(value);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form button {
+  border: none;
+  outline: none;
+  padding: 0.9rem 2rem;
+  text-transform: uppercase;
+  border-radius: 100vw;
+  color: var(--n-white);
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: var(--p-orange);
+  transition: all 250ms ease-in-out;
+}
+
+form button:hover,
+form button:focus {
+  background-color: var(--n-white);
+  color: var(--p-orange);
+  cursor: pointer;
+}
+
+@media (max-width: 27rem) {
+  form ul input[type='radio'],
+  form ul input[type='radio']::before {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
